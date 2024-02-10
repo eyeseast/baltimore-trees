@@ -1,10 +1,9 @@
 [tool.poetry]
-name = "spatial-data-cooking-show"
+name = "baltimore-trees"
 version = "0.1.0"
-description = "A demo project and template repository showing how I use SpatiaLite with Datasette for quick spatial analysis."
+description = "A demo project for NICAR24 in Baltimore"
 authors = ["Chris Amico <eyeseast@gmail.com>"]
 readme = "README.md"
-packages = [{include = "spatial_data_cooking_show"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
