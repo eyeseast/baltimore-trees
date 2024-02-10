@@ -1,4 +1,4 @@
-id,location_type,species,common_name,space_type,address,street,side,dbh,stems,height,space_length,space_width,overhead_utilities,hardscape,cultivar,date,notes,longitude,latitude,x,y
+id,location_type,species,common_name,space_type,address,street,side,dbh,stems,height,space_length,space_width,overhead_utilities,hardscape,cultivar,date,notes,longitude,latitude,_x,_y
 0,Street,Acer platanoides, ,Well/Pit,620,S HANOVER ST,Front,13,1,37, , ,None,None, ,"6/21/2020, 8:00 PM", ,-76.61590656,39.28141637,1421058.505011335,588309.3616905957
 223859,Street,Liriodendron tulipifera,tuliptree,Open/Unrestricted,3500,FALLSTAFF ROAD,Side,44.1,1,97,>20,>20,None,None, ,"4/17/2017, 8:00 PM", ,-76.70212904,39.36593878,1396551.1888685971,619004.1759570092
 223860,Street,Acer rubrum,"maple, red",Tree Lawn,7038,WALLIS AVE,Front,19.1,1,45,16,3,Both,None, ,"4/17/2017, 8:00 PM", ,-76.70473078,39.36808151,1395813.0712503344,619782.2521567494

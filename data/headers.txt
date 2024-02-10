@@ -1,1 +1,1 @@
-id,location_type,species,common_name,space_type,address,street,side,dbh,stems,height,space_length,space_width,overhead_utilities,hardscape,cultivar,date,notes,longitude,latitude,x,y
+id,location_type,species,common_name,space_type,address,street,side,dbh,stems,height,space_length,space_width,overhead_utilities,hardscape,cultivar,date,notes,longitude,latitude,_x,_y
