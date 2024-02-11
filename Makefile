@@ -13,8 +13,8 @@ install:
 
 tiles: public/baltimore.pmtiles public/trees.pmtiles
 
-trees: $(DB) data/trees-clean.csv
-	$(SU) insert $(DB) $@ data/trees-clean.csv --csv --detect-types
+trees: $(DB) data/trees.ndjson
+	poetry run geojson-to-sqlite $(DB) $@ data/trees.ndjson --nl --spatialite --pk ID
 
 run:
 	# https://docs.datasette.io/en/stable/settings.html#configuration-directory-mode
@@ -23,9 +23,8 @@ run:
 clean:
 	rm -f $(DB) $(DB)-shm $(DB)-wal public/*.pmtiles
 
-data/trees-clean.csv: data/Trees.csv data/headers.txt
-	cat data/headers.txt > $@
-	cat data/Trees.csv | tail -n +2 >> $@
+data/trees.ndjson:
+	poetry run ./download.py
 
 $(DB):
 	$(SU) create-database $@ --enable-wal --init-spatialite
@@ -33,5 +32,8 @@ $(DB):
 public/baltimore.pmtiles:
 	pmtiles extract $(PMTILES_BUILD) $@ --bbox="$(BBOX)"
 
-public/trees.pmtiles: data/trees-clean.csv
-	tippecanoe -zg -o $@ --drop-densest-as-needed $^
+public/trees.pmtiles: data/trees.ndjson
+	tippecanoe -zg -o $@ --drop-densest-as-needed --layer trees $^
+
+public/trees.mbtiles: data/trees.ndjson
+	tippecanoe -zg -o $@ --drop-densest-as-needed --layer trees $^

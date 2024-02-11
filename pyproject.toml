@@ -12,6 +12,7 @@ sqlite-utils = "^3.36"
 geojson-to-sqlite = "^1.1.1"
 datasette-geojson-map = "^0.4.0"
 sqlite-colorbrewer = "^0.2"
+httpx = "^0.26.0"
 
 
 [tool.poetry.group.dev.dependencies]

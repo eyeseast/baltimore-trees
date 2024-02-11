@@ -41,12 +41,12 @@ pmtiles extract https://build.protomaps.com/20240211.pmtiles public/baltimore.pm
 
 ## Tree data
 
-The City of Baltimore publishes a [public tree inventory](https://baltimore.maps.arcgis.com/apps/webappviewer/index.html?id=d2cfbbe9a24b4d988de127852e6c26c8) on its [data portal](https://data.baltimorecity.gov/). I downloaded a CSV and cleaned up the header names by hand.
+The City of Baltimore publishes a [public tree inventory](https://baltimore.maps.arcgis.com/apps/webappviewer/index.html?id=d2cfbbe9a24b4d988de127852e6c26c8) on its [data portal](https://data.baltimorecity.gov/). Running `make data/trees.ndjson` will use a Python script to download the full dataset as newline-delimited GeoJSON.
 
 [Datasette](https://datasette.io/) offers a way to quickly explore data, including with maps. The `Makefile` in this project includes commands to build an SQLite database with SpatiaLite and run a Datasette instance.
 
 ```sh
-# build the database
+# build the database, downloading data if needed
 make trees
 
 # run the server
