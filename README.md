@@ -53,6 +53,19 @@ make trees
 make run
 ```
 
+## Improve this map
+
+I've deliberately left some things off this map. If you're looking through this codebase, I encourage you to fork it and add:
+
+- controls
+- search
+- a legend
+- zoom-based scaling for tree points
+- color-coding of trees, based on species or some other property
+- other data-driven overlays (local income, redlining history, etc)
+
+Trees on public streets, or lack thereof, are often an [indicator of inequality](https://www.democratandchronicle.com/in-depth/news/2022/04/05/rochester-urban-tree-canopy-reflects-deep-racial-and-social-divisions/9357541002/). Use this map as a starting point to look for bigger stories.
+
 ## Further reading
 
 - [Protomaps]
