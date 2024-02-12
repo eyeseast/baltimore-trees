@@ -8,8 +8,7 @@ maplibregl.addProtocol("pmtiles", protocol.tile);
 
 const style = {
   version: 8,
-  glyphs:
-    "https://protomaps.github.io/basemaps-assets/fonts/{fontstack}/{range}.pbf",
+  glyphs: "./fonts/{fontstack}/{range}.pbf",
   sources: {
     protomaps: {
       type: "vector",
@@ -39,18 +38,25 @@ const map = new maplibregl.Map({
 });
 
 map.once("load", (e) => {
+  const firstSymbolLayer = map
+    .getStyle()
+    .layers.find((layer) => layer.type === "symbol");
+
   // add our tree layer here
-  map.addLayer({
-    id: "trees",
-    type: "circle",
-    source: "trees",
-    "source-layer": "trees",
-    paint: {
-      "circle-color": "green",
-      "circle-opacity": 0.5,
-      "circle-radius": 3,
+  map.addLayer(
+    {
+      id: "trees",
+      type: "circle",
+      source: "trees",
+      "source-layer": "trees",
+      paint: {
+        "circle-color": "green",
+        "circle-opacity": 0.5,
+        "circle-radius": 3,
+      },
     },
-  });
+    firstSymbolLayer.id
+  );
 });
 
 window.map = map;

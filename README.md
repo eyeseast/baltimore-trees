@@ -39,6 +39,10 @@ I used [this site](https://boundingbox.klokantech.com/) to find a bounding box o
 pmtiles extract https://build.protomaps.com/20240211.pmtiles public/baltimore.pmtiles --bbox="-76.861861,39.096181,-76.360388,39.454149
 ```
 
+### Fonts
+
+Fonts are copied from the [Protomaps basemaps-assets](https://github.com/protomaps/basemaps-assets) repository. To use a custom typeface, generate PBFs with [font-maker](https://maplibre.org/font-maker/).
+
 ## Tree data
 
 The City of Baltimore publishes a [public tree inventory](https://baltimore.maps.arcgis.com/apps/webappviewer/index.html?id=d2cfbbe9a24b4d988de127852e6c26c8) on its [data portal](https://data.baltimorecity.gov/). Running `make data/trees.ndjson` will use a Python script to download the full dataset as newline-delimited GeoJSON.
