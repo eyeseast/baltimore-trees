@@ -18,7 +18,7 @@ trees: $(DB) data/trees.ndjson
 
 run:
 	# https://docs.datasette.io/en/stable/settings.html#configuration-directory-mode
-	npm run dev -- --open & poetry run datasette serve . --load-extension spatialite
+	npm run dev -- --open & poetry run datasette serve . --load-extension spatialite -h 0.0.0.0
 
 clean:
 	rm -f $(DB) $(DB)-shm $(DB)-wal public/*.pmtiles
